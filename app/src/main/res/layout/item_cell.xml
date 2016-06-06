@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@drawable/border_cell"
+    android:layout_margin="@dimen/margin_cell"
+    android:orientation="vertical">
+
+    <View
+        android:id="@+id/cell"
+        android:background="@color/cellAlive"
+        android:layout_width="@dimen/cell_size"
+        android:layout_height="@dimen/cell_size" />
+</LinearLayout>
