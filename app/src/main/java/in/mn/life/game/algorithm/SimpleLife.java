@@ -42,15 +42,15 @@ public class SimpleLife implements Life<SquareWorld> {
         });
     }
 
-    private SquareWorld getNextGenerationWorld(final SquareWorld world) {
+    SquareWorld getNextGenerationWorld(final SquareWorld world) {
         SquareWorld nextGenerationWorld = new SquareWorld(world.getSize());
-        for (Cell cell : currentWorld.getCells()) {
-            nextGenerationWorld.setCell(getNextGenerationCell(currentWorld, cell));
+        for (Cell cell : world.getCells()) {
+            nextGenerationWorld.setCell(getNextGenerationCell(world, cell));
         }
         return nextGenerationWorld;
     }
 
-    private Cell getNextGenerationCell(final SquareWorld world, final Cell cell) {
+    Cell getNextGenerationCell(final SquareWorld world, final Cell cell) {
         int neighbourCount = world.getAliveNeighboursCount(cell);
         Cell nextGenCell = new Cell(cell.getRow(), cell.getColumn());
         if (cell.isAlive()) {

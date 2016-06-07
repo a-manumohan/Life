@@ -156,6 +156,21 @@ public class SquareWorld implements World, Parcelable {
         return builder.toString();
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (o instanceof SquareWorld) {
+            int i = 0;
+            for (Cell cell : ((SquareWorld) o).getCells()) {
+                if (cell.getState() != mWorld[i].getState()) {
+                    return false;
+                }
+                ++i;
+            }
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     @Override
     public int describeContents() {
